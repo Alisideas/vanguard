@@ -26,9 +26,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-6">
+    <div className=" h-[500px] flex flex-col items-center justify-center bg-gray-50 p-6">
       <div className="w-full max-w-lg">
-        <h1 className="text-4xl font-semibold text-center text-gray-800 mb-8">
+        <h1 className="text-4xl font-bold font-sans text-center text-gray-800 mb-8">
           سناریو خود را انتخاب کنید
         </h1>
         <div className="flex justify-center space-x-6 mb-6">
@@ -38,7 +38,7 @@ export default function Home() {
               variant="primary"
               className="px-6 py-3 text-lg font-medium"
             >
-              سناریو بازپرس
+              🕵🏻‍♂️ سناریو بازپرس
             </Button>
           </div>
           <div className="flex justify-center space-x-6 mb-6">
@@ -47,7 +47,7 @@ export default function Home() {
               variant="primary"
               className="px-6 py-3 text-lg font-medium"
             >
-              سناریو ونگارد
+             💂🏻 سناریو ونگارد
             </Button>
           </div>
           <div className="flex justify-center space-x-6 mb-6">
@@ -56,7 +56,7 @@ export default function Home() {
               variant="primary"
               className="px-6 py-3 text-lg font-medium"
             >
-              سناریو نماینده
+             🙋🏻‍♂️ سناریو نماینده
             </Button>
           </div>
         </div>
