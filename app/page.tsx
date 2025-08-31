@@ -50,6 +50,15 @@ export default function Home() {
               سناریو ونگارد
             </Button>
           </div>
+          <div className="flex justify-center space-x-6 mb-6">
+            <Button
+              onClick={() => handleScenarioSelection("Namayande")}
+              variant="primary"
+              className="px-6 py-3 text-lg font-medium"
+            >
+              سناریو نماینده
+            </Button>
+          </div>
         </div>
 
         {scenario && (

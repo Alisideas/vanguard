@@ -338,7 +338,7 @@ export const createMafiaRoles = (
           name: "ریٔیس مافیا",
           description: "شما رهبر مافیا هستید و بازی را کنترل می‌کنید.",
           color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr8.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam1.jpg",
           package: numPlayers,
         },
         {
@@ -346,15 +346,15 @@ export const createMafiaRoles = (
           name: "هکر",
           description: "شما عضو مافیا هستید و باید بی‌گناهان را از بین ببرید.",
           color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr6.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam3.jpg",
           package: numPlayers,
         },
         {
           id: 3,
-          name: "ناتو",
+          name: "یاغی",
           description: "شما عضو مافیا هستید و باید بی‌گناهان را از بین ببرید.",
           color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr2.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam2.jpg",
           package: numPlayers,
         },
         {
@@ -362,7 +362,7 @@ export const createMafiaRoles = (
           name: "دکتر",
           description: "شما می‌توانید یک نفر را از حذف شدن در شب نجات دهید.",
           color: "green",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr9.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam8.jpg",
           package: numPlayers,
         },
         {
@@ -371,7 +371,7 @@ export const createMafiaRoles = (
           description:
             "شما می‌توانید دیگر بازیکنان را بررسی کنید تا ببینید آیا آنها مافیا هستند.",
           color: "blue",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr7.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam7.jpg",
           package: numPlayers,
         },
         {
@@ -380,7 +380,7 @@ export const createMafiaRoles = (
           description:
             "شما می‌توانید یک بازیکن را از بازی خارج کنید اگر خودتان حذف شوید.",
           color: "#e69b00",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr5.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam6.jpg",
           package: numPlayers,
         },
         {
@@ -389,16 +389,16 @@ export const createMafiaRoles = (
           description:
             "شما یک شهروند هستید که می‌توانید به شناسایی مافیا کمک کنید.",
           color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr3.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam10.jpg",
           package: numPlayers,
         },
         {
           id: 8,
-          name: "شهروند ساده",
+          name: "محافظ",
           description:
             "شما یک شهروند خاص هستید که می‌توانید از خود در برابر حملات محافظت کنید.",
           color: "purple",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr1.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam9.jpg",
           package: numPlayers,
         },
         {
@@ -407,7 +407,7 @@ export const createMafiaRoles = (
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
           color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam12.jpg",
           package: numPlayers,
         },
         {
@@ -416,7 +416,7 @@ export const createMafiaRoles = (
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
           color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam12.jpg",
           package: numPlayers,
         },
       ];
@@ -429,7 +429,7 @@ export const createMafiaRoles = (
           name: "ریٔیس مافیا",
           description: "شما رهبر مافیا هستید و بازی را کنترل می‌کنید.",
           color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr8.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam1.jpg",
           package: numPlayers,
         },
         {
@@ -437,15 +437,15 @@ export const createMafiaRoles = (
           name: "هکر",
           description: "شما عضو مافیا هستید و باید بی‌گناهان را از بین ببرید.",
           color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr6.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam3.jpg",
           package: numPlayers,
         },
         {
           id: 3,
-          name: "ناتو",
+          name: "یاغی",
           description: "شما عضو مافیا هستید و باید بی‌گناهان را از بین ببرید.",
           color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr2.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam2.jpg",
           package: numPlayers,
         },
         {
@@ -453,7 +453,7 @@ export const createMafiaRoles = (
           name: "دکتر",
           description: "شما می‌توانید یک نفر را از حذف شدن در شب نجات دهید.",
           color: "green",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr9.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam8.jpg",
           package: numPlayers,
         },
         {
@@ -462,7 +462,7 @@ export const createMafiaRoles = (
           description:
             "شما می‌توانید دیگر بازیکنان را بررسی کنید تا ببینید آیا آنها مافیا هستند.",
           color: "blue",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr7.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam7.jpg",
           package: numPlayers,
         },
         {
@@ -471,7 +471,7 @@ export const createMafiaRoles = (
           description:
             "شما می‌توانید یک بازیکن را از بازی خارج کنید اگر خودتان حذف شوید.",
           color: "#e69b00",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr5.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam6.jpg",
           package: numPlayers,
         },
         {
@@ -479,26 +479,26 @@ export const createMafiaRoles = (
           name: "وکیل",
           description:
             "شما یک شهروند هستید که می‌توانید به شناسایی مافیا کمک کنید.",
-          color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr3.jpg",
+          color: "blue",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam10.jpg",
           package: numPlayers,
         },
         {
           id: 8,
-          name: "سرباز",
+          name: "محافظ",
           description:
             "شما یک شهروند خاص هستید که می‌توانید از خود در برابر حملات محافظت کنید.",
           color: "purple",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr1.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam9.jpg",
           package: numPlayers,
         },
         {
           id: 9,
-          name: "مافیا ساده",
+          name: "شهروند ساده",
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
           color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam12.jpg",
           package: numPlayers,
         },
         {
@@ -507,25 +507,25 @@ export const createMafiaRoles = (
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
           color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam12.jpg",
           package: numPlayers,
         },
         {
           id: 11,
-          name: "شهروند ساده",
+          name: "سرباز",
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
-          color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          color: "orange",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam11.jpg",
           package: numPlayers,
         },
         {
           id: 12,
-          name: "شهروند ساده",
+          name: "ناتو",
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
-          color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          color: "red",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam4.jpg",
           package: numPlayers,
         },
       ];
@@ -538,111 +538,112 @@ export const createMafiaRoles = (
           name: "ریٔیس مافیا",
           description: "شما رهبر مافیا هستید و بازی را کنترل می‌کنید.",
           color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr8.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam1.jpg",
           package: numPlayers,
         },
         {
           id: 2,
-          name: "شیاد",
+          name: "هکر",
           description: "شما عضو مافیا هستید و باید بی‌گناهان را از بین ببرید.",
           color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr6.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam3.jpg",
           package: numPlayers,
         },
         {
           id: 3,
-          name: "ناتو",
+          name: "یاغی",
           description: "شما عضو مافیا هستید و باید بی‌گناهان را از بین ببرید.",
           color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr2.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam2.jpg",
           package: numPlayers,
         },
         {
           id: 4,
-          name: "مافیا ساده",
-          description: "شما عضو مافیا هستید و باید بی‌گناهان را از بین ببرید.",
-          color: "red",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr11.jpg",
+          name: "دکتر",
+          description: "شما می‌توانید یک نفر را از حذف شدن در شب نجات دهید.",
+          color: "green",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam8.jpg",
           package: numPlayers,
         },
         {
           id: 5,
-          name: "دکتر",
-          description: "شما می‌توانید یک نفر را از حذف شدن در شب نجات دهید.",
-          color: "green",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr9.jpg",
+          name: "راهنما",
+          description:
+            "شما می‌توانید دیگر بازیکنان را بررسی کنید تا ببینید آیا آنها مافیا هستند.",
+          color: "blue",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam7.jpg",
           package: numPlayers,
         },
         {
           id: 6,
-          name: "کاراگاه",
+          name: "مین گذار",
           description:
-            "شما می‌توانید دیگر بازیکنان را بررسی کنید تا ببینید آیا آنها مافیا هستند.",
-          color: "blue",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr7.jpg",
+            "شما می‌توانید یک بازیکن را از بازی خارج کنید اگر خودتان حذف شوید.",
+          color: "#e69b00",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam6.jpg",
           package: numPlayers,
         },
         {
           id: 7,
-          name: "هانتر",
+          name: "وکیل",
           description:
-            "شما می‌توانید یک بازیکن را از بازی خارج کنید اگر خودتان حذف شوید.",
-          color: "#e69b00",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr5.jpg",
+            "شما یک شهروند هستید که می‌توانید به شناسایی مافیا کمک کنید.",
+          color: "blue",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam10.jpg",
           package: numPlayers,
         },
         {
           id: 8,
-          name: "بازپرس",
+          name: "محافظ",
           description:
-            "شما یک شهروند هستید که می‌توانید به شناسایی مافیا کمک کنید.",
-          color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr3.jpg",
+            "شما یک شهروند خاص هستید که می‌توانید از خود در برابر حملات محافظت کنید.",
+          color: "purple",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam9.jpg",
           package: numPlayers,
         },
         {
           id: 9,
-          name: "رویین تن",
+          name: "شهروند ساده",
           description:
-            "شما یک شهروند خاص هستید که می‌توانید از خود در برابر حملات محافظت کنید.",
-          color: "purple",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr1.jpg",
+            "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
+          color: "gray",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam12.jpg",
           package: numPlayers,
         },
         {
           id: 10,
-          name: "تک‌تیرانداز",
+          name: "شهروند ساده",
           description:
-            "شما می‌توانید یک هدف را از فاصله دور از بین ببرید، اما تنها یک بار.",
-          color: "blue",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr10.jpg",
+            "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
+          color: "gray",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam12.jpg",
           package: numPlayers,
         },
         {
           id: 11,
-          name: "شهروند ساده",
+          name: "سرباز",
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
-          color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          color: "orange",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam11.jpg",
           package: numPlayers,
         },
         {
           id: 12,
-          name: "شهروند ساده",
+          name: "ناتو",
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
-          color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          color: "red",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam4.jpg",
           package: numPlayers,
         },
         {
           id: 13,
-          name: "شهروند ساده",
+          name: "مافیا ساده",
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
           color: "gray",
-          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          image: "https://whitesho.com/imgs/products/ProductDetails/nam5.jpg",
           package: numPlayers,
         },
       ];
