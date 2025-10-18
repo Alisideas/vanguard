@@ -1,49 +1,121 @@
-'use client';
+"use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <div>
-      <footer className="w-full border-t bg-white py-4 flex flex-col items-center justify-center gap-2 ">
-        <div className="text-sm text-gray-500">
-          ساخته شده با ❤️ برای بازی مافیا
-        </div>
-        <div className="underline cursor-pointer text-sm text-gray-500 hover:text-gray-700">از طرف هکر</div>
-        <div className="flex gap-4">
-          <Link
-            href="https://github.com/Alisideas"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-700 transition-colors"
-          >
-            {/* GitHub icon (shadcn style) */}
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.338 4.695-4.566 4.944.36.31.68.921.68 1.857 0 1.34-.012 2.42-.012 2.75 0 .268.18.579.688.481C19.138 20.2 22 16.448 22 12.021 22 6.484 17.523 2 12 2Z"
-              />
-            </svg>
+    <footer
+      dir="rtl"
+      className="text-gray-300 mt-20 border-t border-orange-900/40"
+    >
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12">
+        {/* لوگو / برند */}
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 flex flex-col items-start gap-4">
+          <Link href="/" className="flex items-center justify-center">
+            <Image
+              src="/images/logo.png"
+              alt="لوگوی ونگارد مافیا"
+              width={150}
+              height={150}
+              className="w-32 sm:w-40"
+            />
           </Link>
-          <Link
-            href="mailto:alirezakbarim@gmail.com"
-            className="text-gray-400 hover:text-gray-700 transition-colors"
-          >
-            {/* Email icon (shadcn style) */}
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M2 6.75A2.75 2.75 0 0 1 4.75 4h14.5A2.75 2.75 0 0 1 22 6.75v10.5A2.75 2.75 0 0 1 19.25 20H4.75A2.75 2.75 0 0 1 2 17.25V6.75Zm2.75-1.25a1.25 1.25 0 0 0-1.25 1.25v.637l8.25 5.5 8.25-5.5V6.75a1.25 1.25 0 0 0-1.25-1.25H4.75Zm15.25 3.363-7.613 5.08a1 1 0 0 1-1.124 0L3.25 8.863v8.387a1.25 1.25 0 0 0 1.25 1.25h14.5a1.25 1.25 0 0 0 1.25-1.25V8.863Z"
-              />
-            </svg>
-          </Link>
+          <p className="text-xs text-gray-500">
+            © {new Date().getFullYear()} ونگارد و کافی مافی
+          </p>
         </div>
-        <div className="text-xs text-gray-400 mt-1">
-          © {new Date().getFullYear()} Vanguard Mafia Game. All rights reserved.
-        </div>
-      </footer>
-    </div>
-  );
-};
 
-export default Footer;
+        {/* درباره شبکه */}
+        <div>
+          <h4 className="font-semibold text-[#f7941f] mb-4 uppercase text-sm tracking-wider">
+            شبکه
+          </h4>
+          <ul className="space-y-2 text-gray-400 hover:[&_li]:text-gray-200 transition-all">
+            <li>خانه</li>
+            <li>درباره ما</li>
+            <li>داستان</li>
+            <li>اتحادها</li>
+          </ul>
+        </div>
+
+        {/* گیم‌پلی */}
+        <div>
+          <h4 className="font-semibold text-[#f7941f] mb-4 uppercase text-sm tracking-wider">
+            گیم‌پلی
+          </h4>
+          <ul className="space-y-2 text-gray-400 hover:[&_li]:text-gray-200 transition-all">
+            <li>رتبه‌ها و قدرت</li>
+            <li>بازار سیاه</li>
+            <li>قلمروها</li>
+            <li>قراردادها</li>
+          </ul>
+        </div>
+
+        {/* تماس و قوانین */}
+        <div>
+          <h4 className="font-semibold text-[#f7941f] mb-4 uppercase text-sm tracking-wider">
+            تماس با ما
+          </h4>
+          <ul className="space-y-2 text-gray-400">
+            <li>support@vanguardmafia.com</li>
+            <li>(+1) 555-933-4040</li>
+          </ul>
+
+          <h4 className="font-semibold text-[#f7941f] mt-6 mb-4 uppercase text-sm tracking-wider">
+            قوانین
+          </h4>
+          <ul className="space-y-2 text-gray-400">
+            <li>شرایط استفاده</li>
+            <li>سیاست حفظ حریم خصوصی</li>
+          </ul>
+        </div>
+
+        {/* عضویت و نقشه استانبول */}
+        <div className="rounded-2xl md:w-[300px] sm:w-[400px] md:w-[500px] overflow-hidden border border-orange-900/50 p-6 flex flex-col justify-between shadow-lg shadow-orange-900/30">
+          <div>
+            <p className="text-xs uppercase text-[#f7941f] mb-2">
+              به شبکه ونگارد بپیوندید
+            </p>
+            <h3 className="text-lg font-semibold text-gray-700 leading-snug">
+              از مأموریت‌ها و به‌روزرسانی‌های <br /> دنیای زیرزمینی استانبول باخبر شوید.
+            </h3>
+
+            <div className="flex justify-between items-center mt-4 bg-orange-900/30 border border-orange-900/40 rounded-lg overflow-hidden">
+              <input
+                type="email"
+                placeholder="ایمیل محرمانه خود را وارد کنید"
+                className="flex-grow px-3 text-sm py-2 bg-transparent text-white placeholder-gray-500 focus:outline-none text-right"
+              />
+              <button className="bg-[#f7941f] text-black font-semibold px-4 py-2 hover:bg-orange-500 transition">
+                عضویت
+              </button>
+            </div>
+          </div>
+
+          {/* نقشه استانبول */}
+          <div className="mt-4 rounded-xl overflow-hidden border border-orange-800/40">
+            <iframe
+              title="نقشه استانبول"
+              width="100%"
+              height="180"
+              loading="lazy"
+              allowFullScreen
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.898277852677!2d28.653150790762933!3d41.00559959748158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f0009adb50b%3A0xb76e4f50b7e79c46!2sCafi%20mafi!5e0!3m2!1sen!2str!4v1760797311608!5m2!1sen!2str"
+              style={{
+                filter:
+                  "grayscale(100%) contrast(120%) brightness(90%) hue-rotate(320deg)",
+              }}
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center py-6 text-xs text-gray-500 border-t border-orange-900/30">
+        <span className="text-[#f7941f]">
+          🧡 ساخته شده بدست هکر — استانبول، ۲۰۲۵
+        </span>
+      </div>
+    </footer>
+  );
+}
