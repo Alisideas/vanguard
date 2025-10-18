@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md border-b border-gray-100">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md border-b border-gray-100 px-6">
       <div className="max-w-7xl mx-auto flex justify-between items-center ">
         {/* LEFT: QR ICON */}
         <motion.div

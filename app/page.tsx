@@ -10,8 +10,9 @@ import {
   CardContent,
 } from "@/app/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import TestimonialCarousel from "./components/testimonials";
+import InstagramFeed from "./components/instagramfeed";
 
 export default function Home() {
   const [scenario, setScenario] = useState<string | null>(null);
@@ -36,13 +37,18 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* HERO SECTION */}
-      {/* HERO SECTION */}
       <section className="relative flex flex-col items-center justify-center text-center py-32 px-6 overflow-hidden bg-gradient-to-b from-gray-50 via-white to-gray-100">
         {/* Soft floating clouds (blur effect) */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl opacity-60"></div>
-          <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-gray-100 rounded-full blur-3xl opacity-70"></div>
-          <div className="absolute bottom-0 left-10 w-96 h-96 bg-[#f5a142] rounded-full blur-3xl opacity-20"></div>
+        {/* Soft floating clouds (blur effect) */}
+        <div className="absolute inset-0 overflow-hidden -z-10">
+          {/* Top left white blur */}
+          <div className="absolute top-10 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl opacity-60 md:w-80 md:h-80"></div>
+
+          {/* Middle right gray blur */}
+          <div className="absolute top-1/2 right-1/4 w-56 h-56 bg-gray-100 rounded-full blur-3xl opacity-70 md:w-72 md:h-72"></div>
+
+          {/* Bottom orange blur — hidden or smaller on mobile */}
+          <div className="absolute bottom-0 left-10 w-48 h-48 bg-[#f5a142] rounded-full blur-3xl opacity-20 md:w-96 md:h-96 md:opacity-25"></div>
         </div>
 
         <motion.h1
@@ -97,10 +103,12 @@ export default function Home() {
       </section>
 
       {/* SCENARIO SECTION */}
+      {/* SCENARIO SECTION */}
       <section id="scenarios" className="max-w-6xl mx-auto px-6 py-16">
         <h3 className="text-3xl font-bold text-center text-gray-800 mb-10">
           سناریوی خود را انتخاب کنید
         </h3>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
@@ -144,28 +152,64 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
-        {/* testimonial carousel */}
 
-        {/* PLAYER COUNT SELECTION */}
-        {scenario && (
-          <div className="mt-12 text-center">
-            <h4 className="text-2xl font-semibold text-gray-700 mb-6">
-              تعداد بازیکنان را انتخاب کنید
-            </h4>
-            <div className="flex justify-center flex-wrap gap-4">
-              {[10, 12, 13].map((num) => (
-                <Button
-                  key={num}
-                  onClick={() => handlePlayerCountSelection(num)}
-                  className="px-6 py-3 text-lg font-medium bg-[#f7941f] hover:bg-[#d97706] text-white"
+        {/* Popup for Player Count Selection */}
+        <AnimatePresence>
+          {scenario && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
+              onClick={() => setScenario(null)}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white rounded-2xl shadow-2xl p-8 w-[90%] max-w-md text-center relative"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-2xl"
+                  onClick={() => setScenario(null)}
                 >
-                  {num} بازیکن
-                </Button>
-              ))}
-            </div>
-          </div>
-        )}
+                  ×
+                </button>
+
+                <h4 className="text-2xl font-semibold text-gray-800 mb-6">
+                  تعداد بازیکنان را انتخاب کنید
+                </h4>
+
+                <div className="flex justify-center flex-wrap gap-4 mb-8">
+                  {[10, 12, 13].map((num) => (
+                    <Button
+                      key={num}
+                      onClick={() => handlePlayerCountSelection(num)}
+                      className="px-6 py-3 text-lg font-medium bg-[#f7941f] hover:bg-[#d97706] text-white"
+                    >
+                      {num} بازیکن
+                    </Button>
+                  ))}
+                </div>
+
+                <p className="text-gray-500 text-sm">
+                  سناریوی انتخاب شده:{" "}
+                  <span className="text-[#f7941f] font-semibold">
+                    {scenario === "Bazpors"
+                      ? "بازپرس"
+                      : scenario === "vanguard"
+                      ? "ونگارد"
+                      : "نماینده"}
+                  </span>
+                </p>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
+
       <TestimonialCarousel />
 
       {/* WEEKLY TOURNAMENT SECTION */}
@@ -242,10 +286,12 @@ export default function Home() {
         </div>
       </section>
 
+      <InstagramFeed />
+
       {/* NEWSLETTER SECTION */}
       <section
         id="newsletter"
-        className="bg-[#f7941f] py-16 text-white text-center mt-10"
+        className="bg-[#f7941f] py-16 px-6 text-white text-center mt-10"
       >
         <h3 className="text-3xl font-bold mb-4">📬 عضویت در خبرنامه</h3>
         <p className="text-lg mb-8">

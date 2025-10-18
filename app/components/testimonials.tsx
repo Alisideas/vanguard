@@ -51,37 +51,58 @@ export default function TestimonialCarousel() {
         </p>
       </div>
 
-      {/* Carousel container */}
-      <motion.div
-        className="flex space-x-6 overflow-x-auto no-scrollbar px-6"
-        drag="x"
-        dragConstraints={{ left: -500, right: 0 }}
-      >
-        {testimonials.map((t, i) => (
-          <motion.div
-            key={i}
-            className="min-w-[300px] md:min-w-[350px] bg-gradient-to-br from-[#102010] to-[#1a2d1a] border border-green-700/40 rounded-2xl p-6 shadow-lg shadow-green-900/40 flex flex-col justify-between"
-            whileHover={{ scale: 1.03 }}
-          >
-            <p className="text-gray-300 italic leading-relaxed mb-6">
-              “{t.text}”
-            </p>
-            <div className="flex items-center gap-3">
-              <Image
-                src={t.avatar}
-                alt={t.name}
-                width={48}
-                height={48}
-                className="rounded-full border border-green-600"
-              />
-              <div>
-                <h4 className="font-semibold text-green-300">{t.name}</h4>
-                <p className="text-xs text-gray-400">{t.role}</p>
+      {/* ✅ FIXED & COMPACT SCROLLING CONTAINER */}
+      <div className="overflow-x-auto overflow-y-hidden no-scrollbar px-4 md:px-10">
+        <div
+          className="
+            flex 
+            gap-5 
+            w-max 
+            scroll-smooth 
+            snap-x 
+            snap-mandatory
+            pb-4
+          "
+        >
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              className="
+                flex-shrink-0 
+                snap-center 
+                w-[250px] sm:w-[280px] md:w-[300px]
+                bg-gradient-to-br 
+                from-[#102010] to-[#1a2d1a] 
+                border border-green-700/40 
+                rounded-2xl p-5 
+                shadow-lg shadow-green-900/40 
+                flex flex-col justify-between
+              "
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <p className="text-gray-300 italic leading-relaxed mb-5 text-sm md:text-base">
+                “{t.text}”
+              </p>
+              <div className="flex items-center gap-3">
+                <Image
+                  src={t.avatar}
+                  alt={t.name}
+                  width={42}
+                  height={42}
+                  className="rounded-full border border-green-600"
+                />
+                <div>
+                  <h4 className="font-semibold text-green-300 text-sm md:text-base">
+                    {t.name}
+                  </h4>
+                  <p className="text-xs text-gray-400">{t.role}</p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
