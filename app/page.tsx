@@ -13,13 +13,21 @@ import { Input } from "@/components/ui/input";
 import { AnimatePresence, motion } from "framer-motion";
 import TestimonialCarousel from "./components/testimonials";
 import InstagramFeed from "./components/instagramfeed";
+import Standings from "./components/standings";
+
+
 
 export default function Home() {
   const [scenario, setScenario] = useState<string | null>(null);
   const [numPlayers, setNumPlayers] = useState<number | null>(null);
   const [players, setPlayers] = useState([]);
   const router = useRouter();
-
+const mockPlayers = Array.from({ length: 15 }, (_, i) => ({
+  name: `Player ${i + 1}`,
+  image: `/images/avatar${(i % 5) + 1}.jpg`, // rotate 5 mock images
+  rating: +(Math.random() * 5).toFixed(1),
+  votes: Math.floor(Math.random() * 100),
+}));
   const handleScenarioSelection = (selectedScenario: string) => {
     setScenario(selectedScenario);
   };
@@ -287,6 +295,7 @@ export default function Home() {
       </section>
 
       <InstagramFeed />
+      <Standings weekly={mockPlayers} monthly={mockPlayers} yearly={mockPlayers} />
 
       {/* NEWSLETTER SECTION */}
       <section
@@ -311,6 +320,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
     </div>
   );
 }
