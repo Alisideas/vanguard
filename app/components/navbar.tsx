@@ -1,11 +1,19 @@
 "use client";
+
+
 import Image from "next/image";
 import Link from "next/link";
 import { IoQrCode } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { useSession, signOut } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session, status } = useSession();
+
+  const userRole = session?.user?.role;
+  const isLoading = status === "loading";
+
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md border-b border-gray-100 px-6">
       <div className="max-w-7xl mx-auto flex justify-between items-center ">
@@ -34,26 +42,59 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* RIGHT: sign in / sign up */}
+        {/* RIGHT SECTION */}
         <div className="flex items-center gap-4">
-          <div>
-            <Link
-              href="/sign-in"
-              className="text-sm text-gray-600 hover:text-gray-900"
-            >
-              ورود
-            </Link>
-          </div>
-          <div className="border-l border-gray-300 pl-4">
-            <Button
-            className="bg-[#f7941f] hover:bg-gray-700 text-white"
-              onClick={() =>
-                window.location.href = "/sign-up"
-              }
-            >
-              ثبت‌نام
-            </Button>
-          </div>
+          {isLoading ? (
+            <span className="text-gray-500 text-sm">در حال بارگذاری...</span>
+          ) : session ? (
+            <>
+              <div className="flex items-center gap-4">
+                {/* Dashboard link based on role */}
+                {userRole === "ADMIN" ? (
+                  <Link
+                    href="/dashboard/admin"
+                    className="text-sm text-gray-700 hover:text-gray-900"
+                  >
+                    داشبورد ادمین
+                  </Link>
+                ) : (
+                  <Link
+                    href="/dashboard/user"
+                    className="text-sm text-gray-700 hover:text-gray-900"
+                  >
+                    داشبورد من
+                  </Link>
+                )}
+
+                {/* Logout Button */}
+                <Button
+                  onClick={() => signOut({ callbackUrl: "/" })}
+                  className="bg-red-500 hover:bg-red-600 text-white"
+                >
+                  خروج
+                </Button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div>
+                <Link
+                  href="/login"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  ورود
+                </Link>
+              </div>
+              <div className="border-l border-gray-300 pl-4">
+                <Button
+                  className="bg-[#f7941f] hover:bg-gray-700 text-white"
+                  onClick={() => (window.location.href = "/register")}
+                >
+                  ثبت‌نام
+                </Button>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </header>

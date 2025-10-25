@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
 
         {/* عضویت و نقشه استانبول */}
-        <div className="rounded-2xl md:w-[300px] sm:w-[400px] md:w-[500px] overflow-hidden border border-orange-900/50 p-6 flex flex-col justify-between shadow-lg shadow-orange-900/30">
+        <div className="rounded-2xl md:w-[300px] sm:w-[400px] overflow-hidden border border-orange-900/50 p-6 flex flex-col justify-between shadow-lg shadow-orange-900/30">
           <div>
             <p className="text-xs uppercase text-[#f7941f] mb-2">
               به شبکه ونگارد بپیوندید
@@ -87,7 +87,7 @@ export default function Footer() {
                 placeholder="ایمیل محرمانه خود را وارد کنید"
                 className="flex-grow px-3 text-sm py-2 bg-transparent text-white placeholder-gray-500 focus:outline-none text-right"
               />
-              <button className="bg-[#f7941f] text-black font-semibold px-4 py-2 hover:bg-orange-500 transition">
+              <button className="bg-[#f7941f] md:text-sm text-black font-semibold px-4 py-2 hover:bg-orange-500 transition">
                 عضویت
               </button>
             </div>
