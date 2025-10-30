@@ -15,5 +15,5 @@ export default async function UserDashboardPage() {
     redirect("/dashboard/admin"); // prevent non-user access
   }
 
-  return <ClientDashboard user={currentUser} />;
+  return <ClientDashboard currentUser={currentUser} />;
 }

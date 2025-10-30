@@ -4,18 +4,22 @@ import { Button } from "@/app/components/ui/button";
 import { useRouter } from "next/navigation";
 import UserProfile from "./components/UserProfile";
 
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  points?: number;
-}
-
 interface Props {
-  user: User;
+  currentUser: {
+    id: string;
+    name: string;
+    email: string;
+    points?: number;
+    profilePicture?: string;
+    profileBanner?: string;
+    gamesPlayed: number;
+    mafiaCount: number;
+    citizenCount: number;
+    starRating: number;
+  };
 }
 
-const ClientDashboard: React.FC<Props> = ({ user }) => {
+const ClientDashboard: React.FC<Props> = ({ currentUser: user }) => {
   const router = useRouter();
 
   return (
