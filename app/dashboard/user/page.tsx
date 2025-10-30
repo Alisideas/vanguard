@@ -2,18 +2,18 @@
 import getCurrentUser  from "@/app/actions/getCurrentUser";
 import { redirect } from "next/navigation";
 import ClientDashboard from "./UserDashboardClient";
-import UserProfile from "./components/UserProfile";
+
 
 export default async function UserDashboardPage() {
-  const user = await getCurrentUser();
+  const currentUser = await getCurrentUser();
 
-  if (!user) {
+  if (!currentUser) {
     redirect("/login"); // not logged in
   }
 
-  if (user.role !== "USER") {
+  if (currentUser.role !== "USER") {
     redirect("/dashboard/admin"); // prevent non-user access
   }
 
-  return <UserProfile user={user} />;
+  return <ClientDashboard user={currentUser} />;
 }

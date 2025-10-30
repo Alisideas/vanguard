@@ -17,7 +17,7 @@ interface UserProfileProps {
     citizenCount: number;
     starRating: number; // 0-5
   };
-  isOwner: boolean; // if the logged-in user is viewing their own profile
+  isOwner?: boolean; // if the logged-in user is viewing their own profile
 }
 
 const UserProfile: React.FC<UserProfileProps> = ({ user, isOwner }) => {

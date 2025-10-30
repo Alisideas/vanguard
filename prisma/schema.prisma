@@ -20,8 +20,46 @@ model User {
   email          String?  @unique
   hashedPassword String?
   image          String?
-  role           String   @default("user")
-  points         Int      @default(0) 
+  role           String   @default("user") // "user" | "admin"
+  points         Int      @default(0)
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+
+  games           GameParticipant[]
+  ratingsGiven    Rating[]          @relation("RatingsGiven")
+  ratingsReceived Rating[]          @relation("RatingsReceived")
+}
+
+model Game {
+  id           String            @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  participants GameParticipant[]
+  ratings      Rating[] // ✅ Added this line — opposite of Rating.game
+}
+
+model GameParticipant {
+  id     String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId String  @db.ObjectId
+  gameId String  @db.ObjectId
+  role   String // "mafia" | "citizen"
+  result String? // "win" | "lose"
+  user   User    @relation(fields: [userId], references: [id])
+  game   Game    @relation(fields: [gameId], references: [id])
+}
+
+model Rating {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  fromUserId String   @db.ObjectId
+  toUserId   String   @db.ObjectId
+  gameId     String   @db.ObjectId
+  stars      Int // 1–5
+  createdAt  DateTime @default(now())
+
+  fromUser User @relation("RatingsGiven", fields: [fromUserId], references: [id])
+  toUser   User @relation("RatingsReceived", fields: [toUserId], references: [id])
+  game     Game @relation(fields: [gameId], references: [id])
+
+  @@unique([fromUserId, toUserId, gameId])
 }
