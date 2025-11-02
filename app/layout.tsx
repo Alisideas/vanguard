@@ -6,6 +6,8 @@ import Footer from "@/app/components/footer";
 import { SessionProvider } from "next-auth/react";
 import { Providers } from "./providers";
 
+import { Analytics } from "@vercel/analytics/next"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
