@@ -15,19 +15,17 @@ import TestimonialCarousel from "./components/testimonials";
 import InstagramFeed from "./components/instagramfeed";
 import Standings from "./components/standings";
 
-
-
 export default function Home() {
   const [scenario, setScenario] = useState<string | null>(null);
   const [numPlayers, setNumPlayers] = useState<number | null>(null);
   const [players, setPlayers] = useState([]);
   const router = useRouter();
-const mockPlayers = Array.from({ length: 15 }, (_, i) => ({
-  name: `Player ${i + 1}`,
-  image: `/images/avatar${(i % 5) + 1}.jpg`, // rotate 5 mock images
-  rating: +(Math.random() * 5).toFixed(1),
-  votes: Math.floor(Math.random() * 100),
-}));
+  const mockPlayers = Array.from({ length: 15 }, (_, i) => ({
+    name: `Player ${i + 1}`,
+    image: `/images/avatar${(i % 5) + 1}.jpg`, // rotate 5 mock images
+    rating: +(Math.random() * 5).toFixed(1),
+    votes: Math.floor(Math.random() * 100),
+  }));
   const handleScenarioSelection = (selectedScenario: string) => {
     setScenario(selectedScenario);
   };
@@ -125,7 +123,7 @@ const mockPlayers = Array.from({ length: 15 }, (_, i) => ({
               desc: "یک بازی پر رمز و راز با تمرکز بر تحقیقات و کشف هویت.",
             },
             {
-              name: "vanguard",
+              name: "Vanguard",
               title: "💂🏻 ونگارد",
               desc: "در این سناریو، تیم ونگارد در مقابل مافیا ایستاده است.",
             },
@@ -206,10 +204,7 @@ const mockPlayers = Array.from({ length: 15 }, (_, i) => ({
                   سناریوی انتخاب شده:{" "}
                   <span className="text-[#f7941f] font-semibold">
                     {scenario === "Bazpors"
-                      ? "بازپرس"
-                      : scenario === "vanguard"
-                      ? "ونگارد"
-                      : "نماینده"}
+                      ? "بازپرس" : scenario === "Vanguard" ? "ونگارد" : "نماینده"}
                   </span>
                 </p>
               </motion.div>
@@ -295,7 +290,11 @@ const mockPlayers = Array.from({ length: 15 }, (_, i) => ({
       </section>
 
       <InstagramFeed />
-      <Standings weekly={mockPlayers} monthly={mockPlayers} yearly={mockPlayers} />
+      <Standings
+        weekly={mockPlayers}
+        monthly={mockPlayers}
+        yearly={mockPlayers}
+      />
 
       {/* NEWSLETTER SECTION */}
       <section
@@ -320,8 +319,6 @@ const mockPlayers = Array.from({ length: 15 }, (_, i) => ({
           </div>
         </div>
       </section>
-
-
     </div>
   );
 }

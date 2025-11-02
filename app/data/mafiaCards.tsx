@@ -650,6 +650,111 @@ export const createMafiaRoles = (
     }
   }
 
+  
+
+
+
+
+
+
+
+
+
+  if (scenario === "Vanguard") {
+    if (numPlayers === 10) {
+      customRoles = [
+        {
+          id: 1,
+          name: "ریٔیس مافیا",
+          description: "شما رهبر مافیا هستید و بازی را کنترل می‌کنید.",
+          color: "red",
+          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr8.jpg",
+          package: numPlayers,
+        },
+        {
+          id: 2,
+          name: "پابلو",
+          description: "شما عضو مافیا هستید و باید بی‌گناهان را از بین ببرید.",
+          color: "red",
+          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr6.jpg",
+          package: numPlayers,
+        },
+        {
+          id: 3,
+          name: "تینکر",
+          description: "شما عضو مافیا هستید و باید بی‌گناهان را از بین ببرید.",
+          color: "red",
+          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr2.jpg",
+          package: numPlayers,
+        },
+        {
+          id: 4,
+          name: "دکتر",
+          description: "شما می‌توانید یک نفر را از حذف شدن در شب نجات دهید.",
+          color: "green",
+          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr9.jpg",
+          package: numPlayers,
+        },
+        {
+          id: 5,
+          name: "کاراگاه",
+          description:
+            "شما می‌توانید دیگر بازیکنان را بررسی کنید تا ببینید آیا آنها مافیا هستند.",
+          color: "blue",
+          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr7.jpg",
+          package: numPlayers,
+        },
+        {
+          id: 6,
+          name: "افشاگر",
+          description:
+            "شما می‌توانید یک بازیکن را از بازی خارج کنید اگر خودتان حذف شوید.",
+          color: "#e69b00",
+          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr5.jpg",
+          package: numPlayers,
+        },
+        {
+          id: 7,
+          name: "ونگارد",
+          description:
+            "شما یک شهروند هستید که می‌توانید به شناسایی مافیا کمک کنید.",
+          color: "gray",
+          image: "https://res.cloudinary.com/dbm8ncouc/image/upload/v1761849369/nikoo_jjmufl.png",
+          package: numPlayers,
+        },
+        {
+          id: 8,
+          name: "مظنون",
+          description:
+            "شما یک شهروند خاص هستید که می‌توانید از خود در برابر حملات محافظت کنید.",
+          color: "purple",
+          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr1.jpg",
+          package: numPlayers,
+        },
+        {
+          id: 9,
+          name: "شهروند ساده",
+          description:
+            "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
+          color: "gray",
+          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          package: numPlayers,
+        },
+        {
+          id: 10,
+          name: "شهروند ساده",
+          description:
+            "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
+          color: "gray",
+          image: "https://whitesho.com/imgs/Products/ProductDetails/bazr4.jpg",
+          package: numPlayers,
+        },
+      ];
+    }
+
+    
+  }
+
   // Shuffle the roles randomly
   for (let i = customRoles.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
