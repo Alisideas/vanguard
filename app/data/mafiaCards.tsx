@@ -639,7 +639,7 @@ export const createMafiaRoles = (
         },
         {
           id: 13,
-          name: "مافیا ساده",
+          name: "شهروند ساده",
           description:
             "شما یک شهروند معمولی هستید و باید با دیگران برای پیدا کردن مافیا همکاری کنید.",
           color: "gray",
@@ -649,15 +649,6 @@ export const createMafiaRoles = (
       ];
     }
   }
-
-  
-
-
-
-
-
-
-
 
 
   if (scenario === "Vanguard") {

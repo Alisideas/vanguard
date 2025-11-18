@@ -1,12 +1,12 @@
 "use client";
 
-
 import Image from "next/image";
 import Link from "next/link";
 import { IoQrCode } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { useSession, signOut } from "next-auth/react";
+import Skeleton from "./skeleton";
 
 const Navbar = () => {
   const { data: session, status } = useSession();
@@ -45,18 +45,25 @@ const Navbar = () => {
         {/* RIGHT SECTION */}
         <div className="flex items-center gap-4">
           {isLoading ? (
-            <span className="text-gray-500 text-sm">در حال بارگذاری...</span>
+            <span className="text-gray-500 text-sm">
+              <Skeleton />
+            </span>
           ) : session ? (
             <>
               <div className="flex items-center gap-4">
                 {/* Dashboard link based on role */}
                 {userRole === "ADMIN" ? (
-                  <Link
-                    href="/dashboard/admin"
-                    className="text-sm text-gray-700 hover:text-gray-900"
-                  >
-                    داشبورد ادمین
-                  </Link>
+                  <>
+                    <Link
+                      href="/dashboard/admin"
+                      className="text-sm text-gray-700 hover:text-gray-900"
+                    >
+                      داشبورد ادمین
+                    </Link>
+                    <div>
+                      <Button onClick={() => (window.location.href = "/dashboard/admin/newgame")}>بازی جدید</Button>
+                    </div>
+                  </>
                 ) : (
                   <Link
                     href="/dashboard/user"

@@ -38,7 +38,9 @@ export const authOptions: AuthOptions = {
         }
 
         if (!user.hashedPassword) {
-          throw new Error("این حساب با ورود اجتماعی ساخته شده است. لطفاً از Google یا GitHub وارد شوید.");
+          throw new Error(
+            "این حساب با ورود اجتماعی ساخته شده است. لطفاً از Google یا GitHub وارد شوید."
+          );
         }
 
         const isCorrectPassword = await bcrypt.compare(
@@ -70,6 +72,7 @@ export const authOptions: AuthOptions = {
       if (session.user) {
         session.user.id = token.id as string;
         session.user.role = token.role as string;
+        session.user.role = token.role;
       }
       return session;
     },
