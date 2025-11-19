@@ -14,12 +14,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import TestimonialCarousel from "./components/testimonials";
 import InstagramFeed from "./components/instagramfeed";
 import Standings from "./components/standings";
+import { useSession } from "next-auth/react";
+import UserSelect from "./components/UserSelect";
+import { User } from "./types/user";
 
 export default function Home() {
   const [scenario, setScenario] = useState<string | null>(null);
   const [numPlayers, setNumPlayers] = useState<number | null>(null);
   const [players, setPlayers] = useState([]);
   const router = useRouter();
+
+  const [selectedUsers, setSelectedUsers] = useState<User[]>([]);
+
+  const { data: session } = useSession();
+  const isAdmin = session?.user?.email === "admin@admin.com";
+
   const mockPlayers = Array.from({ length: 15 }, (_, i) => ({
     name: `Player ${i + 1}`,
     image: `/images/avatar${(i % 5) + 1}.jpg`, // rotate 5 mock images
@@ -188,23 +197,30 @@ export default function Home() {
                   تعداد بازیکنان را انتخاب کنید
                 </h4>
 
-                <div className="flex justify-center flex-wrap gap-4 mb-8">
-                  {[10, 12, 13].map((num) => (
-                    <Button
-                      key={num}
-                      onClick={() => handlePlayerCountSelection(num)}
-                      className="px-6 py-3 text-lg font-medium bg-[#f7941f] hover:bg-[#d97706] text-white"
-                    >
-                      {num} بازیکن
-                    </Button>
-                  ))}
-                </div>
+                {isAdmin ? (
+                  <UserSelect onSelect={(users) => setSelectedUsers(users)} />
+                ) : (
+                  <div className="flex justify-center flex-wrap gap-4 mb-8">
+                    {[10, 12, 13].map((num) => (
+                      <Button
+                        key={num}
+                        onClick={() => handlePlayerCountSelection(num)}
+                        className="px-6 py-3 text-lg font-medium bg-[#f7941f] hover:bg-[#d97706] text-white"
+                      >
+                        {num} بازیکن
+                      </Button>
+                    ))}
+                  </div>
+                )}
 
                 <p className="text-gray-500 text-sm">
                   سناریوی انتخاب شده:{" "}
                   <span className="text-[#f7941f] font-semibold">
                     {scenario === "Bazpors"
-                      ? "بازپرس" : scenario === "Vanguard" ? "ونگارد" : "نماینده"}
+                      ? "بازپرس"
+                      : scenario === "Vanguard"
+                      ? "ونگارد"
+                      : "نماینده"}
                   </span>
                 </p>
               </motion.div>
